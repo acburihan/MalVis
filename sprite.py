@@ -20,8 +20,12 @@ images.append(plt.imread('/Users/acburihan/Documents/IMTA/MalVis/TenMalVis/image
 images.append(plt.imread('/Users/acburihan/Documents/IMTA/MalVis/TenMalVis/images/Gatak.png'))
 
 
-# Load the data in trainLabels.csv
-data = pd.read_csv('/Users/acburihan/Documents/IMTA/MalVis/TenMalVis/trainLabels.csv')
+# load the features in completeFeaturesTrainDataset.csv
+features = pd.read_csv('completeFeaturesTrainDataset.csv')
+
+data = pd.DataFrame()
+data['Id'] = features['ID']
+data['Class'] = features['Class']
 
 #print(data['Class'])
 
