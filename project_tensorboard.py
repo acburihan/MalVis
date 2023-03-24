@@ -12,11 +12,14 @@ if not os.path.exists(log_dir):
     os.makedirs(log_dir)
 
 
-# Load the data in trainLabels.csv
-data = pd.read_csv('trainLabels.csv')
+
 
 # load the features in completeFeaturesTrainDataset.csv
 features = pd.read_csv('completeFeaturesTrainDataset.csv')
+
+data = pd.DataFrame()
+data['Id'] = features['ID']
+data['Class'] = features['Class']
 
 # drop the first column (index)
 features = features.drop(features.columns[0], axis=1)
